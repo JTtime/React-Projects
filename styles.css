@@ -1,0 +1,78 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex-column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #6983aa;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.textboxarea {
+  text-align: center;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  background: transparent;
+  font-size: 20px;
+  width: 60%;
+  outline: none;
+  height: 2.5rem;
+}
+.textboxarea:focus {
+  background-color: lightcyan;
+  font-size: 2rem;
+}
+
+.addTask {
+  min-height: 2.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #8566aa;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  padding: 6px;
+}
+
+.addTask:hover {
+  background-color: #20bf6b;
+}
+
+.list {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #7fffd4;
+  border: 2px solid red;
+  width: 80vw;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.todoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.delBtn {
+  width: 3.5rem;
+  height: 2rem;
+  color: darkred;
+  background-color: darkkhaki;
+  position: absolute;
+  right: 3px;
+}
+.delBtn:hover {
+  background-color: crimson;
+}
+
+.dynamicText {
+  background-color: sandybrown;
+}
