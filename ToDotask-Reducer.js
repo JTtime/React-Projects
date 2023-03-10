@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./todo-reducer-styles.css";
 import React, { useReducer } from "react";
 
 
@@ -64,6 +64,7 @@ export default function App() {
   return (
     <div className="App">
       <input
+        className="textboxarea"
         type="text"
         onChange={(e) => getValue(e)}
         value={state.name}
@@ -71,22 +72,31 @@ export default function App() {
       <button className="addTask" onClick={() => newTask(state.name)}>
         Add Task
       </button>
-      <h1>{state.name}</h1>
+      {state.name && (
+        <h1 className="dynamicText">Task to be added: {state.name}</h1>
+      )}
+
       <div>
         {state.list.length ? (
           state.list.map((ele, id) => {
             return (
-              <div key={ele.id}>
-                <h1>
-                  {ele.listName} <button onClick={() => delTask(ele)}>X</button>{" "}
+              <div className="todoContainer" key={ele.id}>
+                <h1 className="list">
+                  {ele.listName}{" "}
+                  <button className="delBtn" onClick={() => delTask(ele)}>
+                    X
+                  </button>{" "}
                 </h1>
               </div>
             );
           })
         ) : (
-          <p>Add some task by typing in Textbox and click Add Task button</p>
+          <p className="reqText">
+            Add some task above & click "Add Task" button
+          </p>
         )}
       </div>
     </div>
   );
 }
+
