@@ -29,17 +29,27 @@ export default function App() {
 
   return (
     <div className="App">
-      <input type="text" onChange={getValue} value={name}></input>
+      <input
+        className="textboxarea"
+        type="text"
+        onChange={getValue}
+        value={name}
+      ></input>
       <button className="addTask" onClick={newTask}>
         Add Task
       </button>
-      <h1>{text}</h1>
+      {text && <h1 className="dynamicText"> Task to be Added:  {text}</h1>}
+      
       <div>
         {list.map((ele, id) => {
           return (
-            <div key={ele.id} id={ele.id}>
-              <h1>{ele.listName}</h1>
-              <button onClick={() => delTask(ele)}>X</button>
+            <div className="todoContainer" key={ele.id} id={ele.id}>
+              <h1 className="list">
+                {ele.listName}{" "}
+                <button className="delBtn" onClick={() => delTask(ele)}>
+                  X
+                </button>
+              </h1>
             </div>
           );
         })}
